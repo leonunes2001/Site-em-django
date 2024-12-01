@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Depoimentos{% endblock %}
+
+{% block content %}
+    <h1>Depoimentos</h1>
+    <div class="testimonial-list">
+        {% for testimonial in testimonials %}
+            <div class="testimonial-card">
+                <h3>{{ testimonial.name }}</h3>
+                <p>{{ testimonial.message }}</p>
+                <p><strong>Data:</strong> {{ testimonial.date_created }}</p>
+            </div>
+        {% empty %}
+            <p>Não há depoimentos cadastrados no momento.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
